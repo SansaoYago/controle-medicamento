@@ -88,30 +88,30 @@
     const hora = tempo.getHours()
 
     const diaSem = tempo.getDay()
-    let  med1, med2, reme1, reme2, color, nomeMed1, nomeMed2
+    let  med1, med2, reme1, reme2, color, nomeMed1, nomeMed2, diaS
 
 //Entrada de dados
 switch(diaSem) {
     case 0:
-        diaSem = 'Domingo'
+        diaS = 'Domingo'
         break
     case 1:
-        diaSem = "Segunda-Feira"
+        diaS = "Segunda-Feira"
         break
     case 2:
-        diaSem = 'Terça-Feira'
+        diaS = 'Terça-Feira'
         break
     case 3:
-        diaSem = 'Quarta-Feira'
+        diaS = 'Quarta-Feira'
         break
     case 4:
-        diaSem = 'Quinta-Feira'
+        diaS = 'Quinta-Feira'
         break
     case 5:
-        diaSem = 'Sexta-Feira'
+        diaS = 'Sexta-Feira'
         break
     case 6:
-        diaSem = 'Sábado'
+        diaS = 'Sábado'
         break
     default:
         console.log('Dia da semana inválido')
@@ -152,7 +152,7 @@ if (hora == 12) {
 
 //Saída de dados
     
-    campo.innerHTML = `${diaSem}<br>${hora} Horas`
+    campo.innerHTML = `${diaS}<br>${hora} Horas`
     
     
     
