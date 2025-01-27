@@ -79,11 +79,16 @@
 
 //Variáveis
     const campo = document.querySelector("#time")
+
     const resp = document.querySelector('h3')
+
     const btn = document.querySelector('button')
-    var agora = new Date()
-    var diaSem = agora.getDay()
-    let tempo, hora, med1, med2, reme1, reme2, color, nomeMed1, nomeMed2
+
+    const tempo = new Date()
+    const hora = tempo.getHours()
+
+    const diaSem = agora.getDay()
+    let hora, med1, med2, reme1, reme2, color, nomeMed1, nomeMed2
 
 //Entrada de dados
 switch(diaSem) {
@@ -91,19 +96,19 @@ switch(diaSem) {
         diaSem = 'Domingo'
         break
     case 1:
-        diaSem = "Segunda"
+        diaSem = "Segunda-Feira"
         break
     case 2:
-        diaSem = 'Terça'
+        diaSem = 'Terça-Feira'
         break
     case 3:
-        diaSem = 'Quarta'
+        diaSem = 'Quarta-Feira'
         break
     case 4:
-        diaSem = 'Quinta'
+        diaSem = 'Quinta-Feira'
         break
     case 5:
-        diaSem = 'Sexta'
+        diaSem = 'Sexta-Feira'
         break
     case 6:
         diaSem = 'Sábado'
@@ -112,7 +117,7 @@ switch(diaSem) {
         console.log('Dia da semana inválido')
         break
 }
-tempo = new Date()
+
 hora = tempo.getHours()
 med1 = 30, med2 = 30
 reme1 = document.querySelector("#pri")
