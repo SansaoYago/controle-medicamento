@@ -86,8 +86,8 @@
 
     const tempo = new Date()
     const hora = tempo.getHours()
-    const minuto = date.getMinutes()
-    const segundo = date.getSeconds()
+    const minuto = tempo.getMinutes()
+    const segundo = tempo.getSeconds()
     const time = [hora, minuto, segundo].join(':')
     const diaSem = tempo.getDay()
 
