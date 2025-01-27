@@ -86,8 +86,11 @@
 
     const tempo = new Date()
     const hora = tempo.getHours()
-
+    const minuto = date.getMinutes()
+    const segundo = date.getSeconds()
+    const time = [hora, minuto, segundo].join(':')
     const diaSem = tempo.getDay()
+
     let  med1, med2, reme1, reme2, color, nomeMed1, nomeMed2, diaS
 
 //Entrada de dados
@@ -152,7 +155,7 @@ if (hora == 19) {
 
 //Saída de dados
     
-    campo.innerHTML = `${diaS}<br>${hora} Horas`
+    campo.innerHTML = `${diaS}<br>${time} Horas`
     
     
     
