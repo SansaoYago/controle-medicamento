@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de medicamento</title>
+    <style> 
+        body {
+            padding: 0px;
+            margin: 0px;
+
+            background-image: linear-gradient(to right, #AFD3D5, #7faa883d);
+        }
+        
+        header > h1 {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 7vw;
+            color: #4C5760;
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.586);
+        }
+
+        button {
+            text-align: center;
+            display: block;
+            margin: auto;
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            font-size: 9px;
+            transition: 0.4s;
+            border: none;
+            box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.082);
+        }
+
+        #time {
+            text-align: center;
+        }
+
+        #display {
+            background-color: #CEFDFF;
+            max-width: 250px;
+            margin: 15px auto;
+            padding: 8px;
+            border-radius: 12px;
+            box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.156);
+        }
+
+        h3 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 style="text-align: center;">
+            Controle de Medicamento
+        </h1>
+    </header>
+    <main>
+        <section id="display">
+            <div id="time"></div>
+            <ul style="list-style: none;">
+                <li id="pri">1°Medicamento: </li>
+                <li id="seg">2°Medicamento: </li>
+            </ul>
+        </section>
+        <button></button>
+        <h3></h3>
+    </main>
+    <footer></footer>
+</body>
+<script>
+
+/*
+    Funções atalho de procedimentos, com ou sem parametros!
+*/
+    
+
+
+//Variáveis
+    const campo = document.querySelector("#time")
+    const resp = document.querySelector('h3')
+    const btn = document.querySelector('button')
+    var agora = new Date()
+    var diaSem = agora.getDay()
+    let tempo, hora, med1, med2, reme1, reme2, color, nomeMed1, nomeMed2
+
+//Entrada de dados
+switch(diaSem) {
+    case 0:
+        diaSem = 'Domingo'
+        break
+    case 1:
+        diaSem = "Segunda"
+        break
+    case 2:
+        diaSem = 'Terça'
+        break
+    case 3:
+        diaSem = 'Quarta'
+        break
+    case 4:
+        diaSem = 'Quinta'
+        break
+    case 5:
+        diaSem = 'Sexta'
+        break
+    case 6:
+        diaSem = 'Sábado'
+        break
+    default:
+        console.log('Dia da semana inválido')
+        break
+}
+tempo = new Date()
+hora = tempo.getHours()
+med1 = 30, med2 = 30
+reme1 = document.querySelector("#pri")
+reme2 = document.querySelector("#seg")
+nomeMed1 = "A-S:"
+nomeMed2 = "Atovastatina:"
+
+//Processamento de dados
+reme1.innerHTML = "<strong>"+nomeMed1+ "</strong> " + med1+ " unidades"
+reme2.innerHTML = "<strong>"+nomeMed2+ "</strong> " + med2 + " unidades"
+
+
+function btnColor(cor) {
+     btn.style.background = cor
+}
+
+if (hora == 23) {
+    btn.style.background = btnColor("rgba(245, 57, 57, 0.833)")
+    resp.innerHTML = `Hora de tomar o medicamento`
+} 
+
+ btn.addEventListener('click', clicar)
+
+ function clicar() {
+    med1 += - 1
+    med2 += -1
+    reme1.innerHTML = `<strong>${nomeMed1}</strong> ${med1} unidades`
+    reme2.innerHTML = `<strong>${nomeMed2}</strong> ${med2} unidades`
+    btn.style.background = btnColor("#B8FFC6")
+    resp.innerText = `Não há medicamentos pendentes`
+    
+ }
+
+//Saída de dados
+    
+    campo.innerHTML = `${diaSem}<br>${hora} Horas`
+    
+    
+    
+</script>
+</html>
