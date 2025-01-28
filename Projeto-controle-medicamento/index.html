@@ -128,7 +128,8 @@ nomeMed2 = "Atovastatina:"
 
 //Processamento de dados
 if (btn.style.background == "") {
-    btn.style.background = btnColor("red")
+    btn.style.background = btnColor("rgba(245, 57, 57, 0.833)")
+    resp.innerHTML = `Hora de tomar o medicamento`
 }
 
 reme1.innerHTML = "<strong>"+nomeMed1+ "</strong> " + med1+ " unidades"
@@ -138,11 +139,6 @@ reme2.innerHTML = "<strong>"+nomeMed2+ "</strong> " + med2 + " unidades"
 function btnColor(cor) {
      btn.style.background = cor
 }
-
-if (hora == 19) {
-    btn.style.background = btnColor("rgba(245, 57, 57, 0.833)")
-    resp.innerHTML = `Hora de tomar o medicamento`
-} 
 
  btn.addEventListener('click', clicar)
 
