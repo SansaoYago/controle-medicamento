@@ -127,6 +127,10 @@ nomeMed1 = "A-S:"
 nomeMed2 = "Atovastatina:"
 
 //Processamento de dados
+if (btn.style.background == "") {
+    btn.style.background = btnColor("red")
+}
+
 reme1.innerHTML = "<strong>"+nomeMed1+ "</strong> " + med1+ " unidades"
 reme2.innerHTML = "<strong>"+nomeMed2+ "</strong> " + med2 + " unidades"
 
@@ -147,7 +151,9 @@ if (hora == 19) {
     med2 += -1
     reme1.innerHTML = `<strong>${nomeMed1}</strong> ${med1} unidades`
     reme2.innerHTML = `<strong>${nomeMed2}</strong> ${med2} unidades`
+
     btn.style.background = btnColor("#B8FFC6")
+
     resp.innerText = `Não há medicamentos pendentes`
     
  }
