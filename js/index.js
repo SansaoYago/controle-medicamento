@@ -59,7 +59,7 @@ btn.style.background = btnColor("rgba(245, 57, 57, 0.833)")
 resp.innerHTML = `Hora de tomar o medicamento`
 }
 
-reme1.innerHTML = "<strong>"+nomeMed1+ "</strong> " + med1+ " unidades"
+reme1.innerHTML = "<strong>"+nomeMed1+ "</strong>"+ med1+" unidades"
 reme2.innerHTML = "<strong>"+nomeMed2+ "</strong> " + med2 + " unidades"
 
 
